@@ -7,10 +7,11 @@ session_start();
 $sid = getenv('TWILIO_ACCOUNT_SID'); 
 $token = getenv('TWILIO_ACCOUNT_TOKEN'); 
 
-$num_questions = 3;//number of questions follow format below when adding new questions.
-$q1 = "Thanks, here is the second question?";
-$q2 = "Awesome, last question. Here is the last wuestion?";
-$q3 = "Great! Thanks for participating in this survey!";
+$num_questions = 4;//number of questions follow format below when adding new questions.
+$q1 = "Thanks for taking our survey. How old are you?";
+$q2 = "Are you male or female?";
+$q3 = "What is your zip code?";
+$q4 = "Thanks again for your participation!";
 
 //response to users who text in for a survey they already completed.
 $already_complete = "Thanks! You have already completed this survey.";
