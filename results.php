@@ -2,16 +2,15 @@
 // Get the PHP helper library from twilio.com/docs/php/install
 require_once('Twilio.php'); // Loads the library
  
- 
- if(isset($_GET['live'])) {
+if(isset($_GET['live'])) {
 	 
 	//********SET CONFIGURATION BELOW AND CONFIGURE TABLE LAYOUT AS NEEDED ******************
 	// Your Account Sid, Auth Token, and Number from twilio.com/user/account
-	$sid = ''; 
-	$token = ''; 
-	$twilio_number = '';
-	$start_date = '2014-03-09'; //start date to retrieve texts from
-	$end_date = '2014-03-11'; //last date of texts to retrieve
+	$sid = getenv('TWILIO_ACCOUNT_SID'); 
+	$token = getenv('TWILIO_ACCOUNT_TOKEN');
+	$twilio_number = getenv('TWILIO_PHONE_NUMBER');
+	$start_date = getenv('SURVEY_START_DATE'); //start date to retrieve texts from (ex. 2015-01-01)
+	$end_date = getenv('SURVEY_END_DATE'); //last date of texts to retrieve (ex. 2015-02-15)
 
 	$client = new Services_Twilio($sid, $token);
 	 
